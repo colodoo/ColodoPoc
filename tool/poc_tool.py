@@ -61,8 +61,8 @@ class PocTool:
     def list_dic_tuple_2json(self, list_dic_tuple):
         return json.dumps(list_dic_tuple, indent=4)
 
-if __name__ == '__main__':
-	tmp = PocTool('http://www.zengyf.com/index_comic_show2.action?id=258&page=1&title=就叫薏米好了')
-	print tmp.get_request(headerNum=2).content
-	# print tmp.list_dic_tuple_2json(tmp.get_send_values())
-	# help(PocTool)
+# if __name__ == '__main__':
+# 	tmp = PocTool('http://www.zengyf.com/index_comic_show2.action?id=258&page=1&title=就叫薏米好了')
+# 	print tmp.get_request(headerNum=2).content
+# 	# print tmp.list_dic_tuple_2json(tmp.get_send_values())
+# 	# help(PocTool)
