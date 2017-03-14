@@ -3,7 +3,7 @@
 # @Time    : 2017/2/12 1:28
 # @Author  : CoLoDoo
 # @Site    : 
-# @File    : poc_xss_test.py
+# @File    : poc_xss.py
 # @Software: PyCharm
 
 from tool.poc_tool import PocTool as tool
@@ -12,7 +12,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-def check_xss(url=''):
+def poc(url=''):
     '''
     描述:
         检测方法xss方法
@@ -38,12 +38,16 @@ def check_xss(url=''):
             logs().print_log(result_url, 'ok')
         return result_urls
     else:
-        return 'url is null'
+        return '[!] URL is NULL'
 
-def attack(url='', postData=''):
+def exp(url='', postData=''):
     pass
 
-if __name__ == '__main__':
-    help(check_xss)
-    check_xss(url='http://www.zengyf.com/index_comic_show2.action?id=258&page=1&title=就叫薏米好了')
+def CLI():
+    import sys
+    if len(sys.argv) != 3:
+        print("[*] poc_xss.py <url>")
+    url = sys.argv[1]
+    print('[*] 跨站脚本 - Cross Site Scripting')
+    print poc(url=url)
 
