@@ -1,6 +1,6 @@
 ColodoPoc
 =====
-# ColodoPoc框架
+ColodoPoc框架,用于自动化渗透,持续更新...
 
 # 更新日志
 ## ColodoPoc v1.0
