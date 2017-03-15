@@ -41,9 +41,9 @@ class PocTool:
     def get_request(self, url='', headerNum=0):
         tmp_url = url if url != '' else self.url
         if headerNum != 0:
-            request = requests.get(tmp_url, headers=self.headers[headerNum], verify=False, timeout=self.timeout)
+            request = requests.get(tmp_url, headers=self.headers[headerNum], timeout=self.timeout)
         else:
-            request = requests.get(tmp_url, headers=self.headers[0], verify=False, timeout=self.timeout)
+            request = requests.get(tmp_url, headers=self.headers[0], timeout=self.timeout)
         return request
 
     # 取得url中的参数
@@ -51,18 +51,10 @@ class PocTool:
     def get_send_values(self):
         values_list = list()
         values_string = self.url.split('?')[1:][0]
-
         for tmp in values_string.split('&'):
             values_list.append(tmp.split('='))
-
         return values_list
 
     # 把list对象转换成json对象
     def list_dic_tuple_2json(self, list_dic_tuple):
         return json.dumps(list_dic_tuple, indent=4)
-
-# if __name__ == '__main__':
-# 	tmp = PocTool('http://www.zengyf.com/index_comic_show2.action?id=258&page=1&title=就叫薏米好了')
-# 	print tmp.get_request(headerNum=2).content
-# 	# print tmp.list_dic_tuple_2json(tmp.get_send_values())
-# 	# help(PocTool)
