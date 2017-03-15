@@ -62,5 +62,5 @@ def CLI():
         print('[*] 跨站脚本 - Cross Site Scripting')
         print poc(url=url)
 
-if __name__ == '__main__':
-    CLI()
+# if __name__ == '__main__':
+#     CLI()
