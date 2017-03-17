@@ -2,6 +2,8 @@ ColodoPoc
 =====
 ColodoPoc框架,用于自动化渗透,持续更新...
 
+[POC更新日志]|(/poc/README_POC.md)
+
 # 更新日志
 ## ColodoPoc v1.0
 * 基本框架包含
@@ -12,3 +14,4 @@ ColodoPoc框架,用于自动化渗透,持续更新...
 * 新增poc目录
     * poc/poc_S2-045.py - s2-045漏洞PoC
     * poc/poc_xss.py    - XSS测试PoC
+
