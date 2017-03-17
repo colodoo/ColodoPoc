@@ -2,7 +2,7 @@ ColodoPoc
 =====
 ColodoPoc框架,用于自动化渗透,持续更新...
 
-[POC更新日志]|(/poc/README_POC.md)
+[POC更新日志](https://github.com/colodoo/ColodoPoc/blob/master/poc/README_POC.md)
 
 # 更新日志
 ## ColodoPoc v1.0
